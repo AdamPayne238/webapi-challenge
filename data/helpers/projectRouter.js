@@ -60,6 +60,23 @@ router.delete('/:id', (req, res) => {
     })
 });
 
+//Working
+router.put('/:id', (req, res) => {
+    const id = req.params.id;
+    const editProject = req.body;
+
+    Projects.update(id, editProject)
+    .then(project => {
+        res.status(200).json(project);
+    })
+    .catch(err => {
+        res.status(500).json({ err: "Failed to update project"})
+    })
+});
+
+
+
+
 
 
 module.exports = router;
