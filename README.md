@@ -26,13 +26,24 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+	We learned about middleware for express that can come pre packaged like helmet, a middleware 	function that provides a small amount of security by hiding the API header information, as well as 	creating custom middleware functions that can be more versatile and scaleable. We also 			learned about sub routes which allow you separate data such as users, posts, and comments by 	using different endpoints. (/api/users, or /api/posts are some examples)
+
 - [ ] Describe Middleware?
+
+	Middleware functions in express can be built in such as “server.use(express.json())”, they can be 	imported from a third party like the helmet middleware, or they can be written out from scratch 	and totally custom.
 
 - [ ] Describe a Resource?
 
+	A resource would be /api/users accesses the users resource and all the information attached.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+	Server codes along with an error will help inform clients about what is going on whether they are 	just missing a password, or if the server is not functioning properly. For example, HTTP status 		503 lets clients know that the server is unable to handle requests due to and overload or a 		scheduled maintenance.
+
 - [ ] How can we partition our application into sub-applications?
+
+	I would start by keeping index.js simple and only having the basic server set up in that file. After 	that all of my imports would be on the server.js file as well as some third party middleware. From 	there I would separate a function model and a route file that is specific to that function model, 		keeping them in the same folder.
+
 
 ## Project Setup
 
